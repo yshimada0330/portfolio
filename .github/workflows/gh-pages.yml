@@ -33,6 +33,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           npm run build
+          rm -rf docs
           mv build docs
 
       - name: deploy
